@@ -45,26 +45,26 @@ function App() {
       <Container fluid="md">
         <Row>
           <Form onSubmit={handleFormSubmit}>
-            <Form.Group className="mb-3" controlId="firstName">
+            <Form.Group className="mb-3" controlId="firstName" onChange={e => setFirstName(e.target.value)}>
               <Form.Label>First Name :</Form.Label>
               <Form.Control type="text" placeholder="Enter First Name" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="lastName">
+            <Form.Group className="mb-3" controlId="lastName" onChange={e => setlastName(e.target.value)}>
               <Form.Label>Last Name :</Form.Label>
               <Form.Control type="text" placeholder="Enter Last Name" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="age">
+            <Form.Group className="mb-3" controlId="age" onChange={e => setAge(e.target.value)}>
               <Form.Label>Age :</Form.Label>
               <Form.Control type="text" placeholder="Enter Your Age" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="formBasicEmail" onChange={e => setformBasicEmail(e.target.value)}>
               <Form.Label>Email :</Form.Label>
               <Form.Control type="email" placeholder="name@example.com" />
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formBasicPassword" onChange={e => setformBasicPassword(e.target.value)}>
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" />
             </Form.Group>
