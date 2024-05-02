@@ -26,7 +26,7 @@ function App() {
     formDate.append('Email', formBasicEmail);
     formDate.append('Password', formBasicPassword);
 
-    fetch('https://api-db-a57ed-default-rtdb.firebaseio.com/', {
+    fetch('https://api-db-a57ed-default-rtdb.firebaseio.com/user.json', {
 
       method: 'POST',
       body: JSON.stringigy(Object.fromEntries(formDate)),
@@ -47,26 +47,26 @@ function App() {
           <Form onSubmit={handleFormSubmit}>
             <Form.Group className="mb-3" controlId="firstName" onChange={e => setFirstName(e.target.value)}>
               <Form.Label>First Name :</Form.Label>
-              <Form.Control type="text" placeholder="Enter First Name" />
+              <Form.Control type="text" placeholder="Enter First Name" value={firstName}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="lastName" onChange={e => setlastName(e.target.value)}>
               <Form.Label>Last Name :</Form.Label>
-              <Form.Control type="text" placeholder="Enter Last Name" />
+              <Form.Control type="text" placeholder="Enter Last Name" value={lastName}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="age" onChange={e => setAge(e.target.value)}>
               <Form.Label>Age :</Form.Label>
-              <Form.Control type="text" placeholder="Enter Your Age" />
+              <Form.Control type="text" placeholder="Enter Your Age" value={age}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail" onChange={e => setformBasicEmail(e.target.value)}>
               <Form.Label>Email :</Form.Label>
-              <Form.Control type="email" placeholder="name@example.com" />
+              <Form.Control type="email" placeholder="name@example.com" value={formBasicEmail}/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword" onChange={e => setformBasicPassword(e.target.value)}>
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control type="password" placeholder="Password" value={formBasicPassword}/>
             </Form.Group>
             <Button variant="primary" type="submit">Submit</Button>
           </Form>
