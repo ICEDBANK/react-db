@@ -57,26 +57,26 @@ function App() {
           <Form onSubmit={handleFormSubmit}>
             <Form.Group className="mb-3" controlId="firstName" onChange={e => setFirstName(e.target.value)}>
               <Form.Label>First Name :</Form.Label>
-              <Form.Control type="text" placeholder="Enter First Name" value={firstName}/>
+              <Form.Control type="text" placeholder="Enter First Name" defaultValue={firstName}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="lastName" onChange={e => setLastName(e.target.value)}>
               <Form.Label>Last Name :</Form.Label>
-              <Form.Control type="text" placeholder="Enter Last Name" value={lastName}/>
+              <Form.Control type="text" placeholder="Enter Last Name" defaultValue={lastName}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="age" onChange={e => setAge(e.target.value)}>
               <Form.Label>Age :</Form.Label>
-              <Form.Control type="text" placeholder="Enter Your Age" value={age}/>
+              <Form.Control type="text" placeholder="Enter Your Age" defaultValue={age}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail" onChange={e => setFormBasicEmail(e.target.value)}>
               <Form.Label>Email :</Form.Label>
-              <Form.Control type="email" placeholder="name@example.com" value={formBasicEmail}/>
+              <Form.Control type="email" placeholder="name@example.com" defaultValue={formBasicEmail}/>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword" onChange={e => setFormBasicPassword(e.target.value)}>
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" value={formBasicPassword}/>
+              <Form.Control type="password" placeholder="Password" defaultValue={formBasicPassword}/>
             </Form.Group>
             <Button variant="primary" type="submit">Submit</Button>
           </Form>
