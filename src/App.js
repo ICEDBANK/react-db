@@ -26,7 +26,17 @@ function App() {
     formDate.append('Email', formBasicEmail);
     formDate.append('Password', formBasicPassword);
 
-    fetch('https://api-db-a57ed-default-rtdb.firebaseio.com/')
+    fetch('https://api-db-a57ed-default-rtdb.firebaseio.com/', {
+
+      method: 'POST',
+      body: JSON.stringigy(Object.fromEntries(formDate)),
+      header: {
+          
+        'Content-Type' : "application/Data",
+
+      },
+
+    })
 
   }
 
