@@ -1,11 +1,12 @@
 import { Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Table from 'react-bootstrap/Table';
 
 function App() {
   return (
     <>
-      <Container fluid>
+      <Container fluid="md">
         <Row>
           <Form>
             <Form.Group className="mb-3" controlId="firstName">
@@ -35,7 +36,26 @@ function App() {
           </Form>
         </Row>
         <Row>
-
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Password</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Joshua</td>
+                <td>Rice</td>
+                <td>36</td>
+                <td>j.e.rice4101@gmail.com</td>
+                <td>D8afebbd</td>
+              </tr>
+            </tbody>
+          </Table>
         </Row>
       </Container>
 
