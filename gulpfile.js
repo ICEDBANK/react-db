@@ -12,12 +12,12 @@ gulp.task('commit-changes', function() {
 
 // Task to push changes to remote repository
 gulp.task('push-changes', function(cb) {
-    git.push('origin', 'main', cb); // Push changes to the 'main' branch of the 'origin' remote
+    git.push('origin', 'master', cb); // Push changes to the 'main' branch of the 'origin' remote
 });
 
 // Task to pull changes from remote repository
 gulp.task('pull-changes', function(cb) {
-    git.pull('origin', 'main', cb); // Pull changes from the 'main' branch of the 'origin' remote
+    git.pull('origin', 'master', cb); // Pull changes from the 'main' branch of the 'origin' remote
 });
 
 // Debounced commit and push function

@@ -37,5 +37,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-git": "^2.10.1",
+    "gulp-watch": "^5.0.1"
   }
 }
