@@ -34,16 +34,20 @@ function App() {
     formData.append('Password', formBasicPassword);
 
     fetch('https://api-db-a57ed-default-rtdb.firebaseio.com/user.json', {
-      method: 'POST',
-      body: JSON.stringify(Object.fromEntries(formData)),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+    method: 'POST',
+    body: JSON.stringify(Object.fromEntries(formData)),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(response => response.json())
+    .then(data => {
+      // Update the users state with the new user data
+      setUsers(prevUsers => [...prevUsers, data]);
+      console.log('Form data submitted:', data);
     })
-      .then(response => response.json())
-      .then(data => console.log('Form data submitted:', data))
-      .catch(error => console.error('Error submitting form:', error));
-  }
+    .catch(error => console.error('Error submitting form:', error));
+}
 
 
   return (
