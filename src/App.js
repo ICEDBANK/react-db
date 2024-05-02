@@ -2,7 +2,7 @@ import { Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './css/styles.css';
 
 function App() {
@@ -33,7 +33,17 @@ function App() {
     'Content-Type': 'application/Data', // Fix typo here
   },
 })
+const [users, setUsers] = useState([]);
 
+useEffect(() => {
+  fetch('https://api-db-a57ed-default-rtdb.firebaseio.com/user.json')
+    .then(response => response.json())
+    .then(data => {
+      const usersArray = Object.values(data);
+      setUsers(usersArray);
+    })
+    .catch(error => console.error('Error fetching data:', error));
+}, []);
 
   }
 
@@ -80,13 +90,15 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Joshua</td>
-                <td>Rice</td>
-                <td>36</td>
-                <td>j.e.rice4101@gmail.com</td>
-                <td>D8afebbd</td>
-              </tr>
+              {users.map((user, index) => (
+                <tr key={index}>
+                  <td>{user['First Name']}</td>
+                  <td>{user['Last Name']}</td>
+                  <td>{user['Age']}</td>
+                  <td>{user['Email']}</td>
+                  <td>{user['Password']}</td>
+                </tr>
+              ))}
             </tbody>
           </Table>
         </Row>
