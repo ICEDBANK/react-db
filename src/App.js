@@ -2,13 +2,39 @@ import { Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
+import { useState } from 'react';
+import './css/styles.css';
 
 function App() {
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setlastName] = useState('');
+  const [age, setAge] = useState('');
+  const [formBasicEmail, setformBasicEmail] = useState('');
+  const [formBasicPassword, setformBasicPassword] = useState('');
+
+  const [data, setData] = useState([]);
+
+  const handleFormSubmit = (e) => {
+
+    e.preventDefault();
+
+    const formDate = new FormData();
+    formDate.append('First Name', firstName);
+    formDate.append('Last Name', lastName);
+    formDate.append('Age', age);
+    formDate.append('Email', formBasicEmail);
+    formDate.append('Password', formBasicPassword);
+
+    fetch('https://api-db-a57ed-default-rtdb.firebaseio.com/')
+
+  }
+
   return (
     <>
       <Container fluid="md">
         <Row>
-          <Form>
+          <Form onSubmit={handleFormSubmit}>
             <Form.Group className="mb-3" controlId="firstName">
               <Form.Label>First Name :</Form.Label>
               <Form.Control type="text" placeholder="Enter First Name" />
