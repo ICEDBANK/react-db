@@ -76,6 +76,7 @@ function App() {
               <Form.Control
                 type="text"
                 placeholder="Enter Last Name"
+                name="lastName"
                 value={formData.lastName}
                 onChange={e => handleInputChange(e.target.value)}
               />
@@ -85,6 +86,7 @@ function App() {
               <Form.Control
                 type="text"
                 placeholder="Enter Your Age"
+                name="age"
                 value={formData.age}
                 onChange={e => handleInputChange(e.target.value)}
               />
@@ -94,6 +96,7 @@ function App() {
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
+                name="formBasicEmail"
                 value={formData.formBasicEmail}
                 onChange={e => handleInputChange(e.target.value)}
               />
@@ -106,6 +109,7 @@ function App() {
               <Form.Control
                 type="password"
                 placeholder="Password"
+                name="formBasicPassword"
                 value={formData.formBasicPassword}
                 onChange={e => handleInputChange(e.target.value)}
               />
