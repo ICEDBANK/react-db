@@ -22,36 +22,37 @@ function App() {
   }, []);
 
   const handleFormSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const formData = new FormData();
-    formData.append('First Name', firstName);
-    formData.append('Last Name', lastName);
-    formData.append('Age', age);
-    formData.append('Email', formBasicEmail);
-    formData.append('Password', formBasicPassword);
-
-    fetch('https://api-db-a57ed-default-rtdb.firebaseio.com/user.json', {
-      method: 'POST',
-      body: JSON.stringify(Object.fromEntries(formData)),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-    .then(response => response.json())
-    .then(data => {
-      setUsers(prevUsers => [...prevUsers, data]);
-      console.log('Form data submitted:', data);
-
-      // Clear input fields after successful form submission
-      setFirstName('');
-      setLastName('');
-      setAge('');
-      setFormBasicEmail('');
-      setFormBasicPassword('');
-    })
-    .catch(error => console.error('Error submitting form:', error));
+  const formData = {
+    'First Name': firstName,
+    'Last Name': lastName,
+    'Age': age,
+    'Email': formBasicEmail,
+    'Password': formBasicPassword
   };
+
+  fetch('https://api-db-a57ed-default-rtdb.firebaseio.com/user.json', {
+    method: 'POST',
+    body: JSON.stringify(formData),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  .then(response => response.json())
+  .then(data => {
+    setUsers(prevUsers => [...prevUsers, data]);
+    console.log('Form data submitted:', data);
+
+    // Clear input fields after successful form submission
+    setFirstName('');
+    setLastName('');
+    setAge('');
+    setFormBasicEmail('');
+    setFormBasicPassword('');
+  })
+  .catch(error => console.error('Error submitting form:', error));
+};
 
   return (
     <>
