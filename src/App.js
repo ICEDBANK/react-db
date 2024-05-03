@@ -91,6 +91,42 @@ function App() {
                 onChange={e => setFirstName(e.target.value)}
               />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="lastName">
+              <Form.Label>Last Name :</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter Last Name"
+                value={lastName}
+                onChange={e => setLastName(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="age">
+              <Form.Label>Age :</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Enter First Name"
+                value={age}
+                onChange={e => setAge(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email :</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter Email"
+                value={formBasicEmail}
+                onChange={e => setFormBasicEmail(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="FormBasicPassword">
+              <Form.Label>Password :</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={formBasicPassword}
+                onChange={e => setFormBasicPassword(e.target.value)}
+              />
+            </Form.Group>
             {/* Similar Form.Group elements for Last Name, Age, Email, and Password */}
             <Button variant="primary" type="submit">Submit</Button>
           </Form>
