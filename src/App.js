@@ -21,11 +21,6 @@ function App() {
   // useEffect to fetch users data from the API endpoint
   useEffect(() => {
     // Fetching user data from the API endpoint
-    fetchData();
-  }, []);
-
-  const fetchData = () => {
-
     fetch('https://api-db-a57ed-default-rtdb.firebaseio.com/user.json')
       .then(response => response.json())
       .then(data => {
@@ -34,8 +29,7 @@ function App() {
         setUsers(usersArray);
       })
       .catch(error => console.error('Error fetching data:', error));
-
-  }
+  }, []);
 
   // Function to handle form submission
   const handleFormSubmit = (e) => {
