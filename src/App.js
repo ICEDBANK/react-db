@@ -56,6 +56,13 @@ function App() {
       // Update the users state with the new user data
       setUsers(prevUsers => [...prevUsers, data]);
       console.log('Form data submitted:', data);
+    }).then(() => {
+      setFirstName('');
+      setLastName('');
+      setAge('');
+      setFormBasicEmail('');
+      setFormBasicPassword('');
+
     })
     .catch(error => console.error('Error submitting form:', error));
   };
