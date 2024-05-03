@@ -38,19 +38,25 @@ function App() {
     headers: {
       'Content-Type': 'application/json',
     },
-  })
-  .then(response => response.json())
-  .then(data => {
-    setUsers(prevUsers => [...prevUsers, data]);
-    console.log('Form data submitted:', data);
+  }).then(data => {
+  const userData = { 
+    'First Name': firstName,
+    'Last Name': lastName,
+    'Age': age,
+    'Email': formBasicEmail,
+    'Password': formBasicPassword,
+    'id': data.name // assuming 'name' is the unique identifier
+  };
+  setUsers(prevUsers => [...prevUsers, userData]);
+  console.log('Form data submitted:', userData);
 
-    // Clear input fields after successful form submission
-    setFirstName('');
-    setLastName('');
-    setAge('');
-    setFormBasicEmail('');
-    setFormBasicPassword('');
-  })
+  // Clear input fields after successful form submission
+  setFirstName('');
+  setLastName('');
+  setAge('');
+  setFormBasicEmail('');
+  setFormBasicPassword('');
+})
   .catch(error => console.error('Error submitting form:', error));
 };
 
